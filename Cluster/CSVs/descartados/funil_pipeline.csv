@@ -1,0 +1,9 @@
+﻿etapa,restantes,removidos,criterio,pct_do_inicial
+0. Base carregada (pos-LDA),6096,0,posts com topico atribuido,100.0
+1. Filtro de topicos,2727,3369,"topico_id em [2, 4, 7, 8]",44.7
+2. Confianca LDA,1142,1585,topico_confianca >= 0.5,18.7
+3. Ruido HDBSCAN,890,252,hdbscan_cluster != -1,14.6
+4. Confianca HDBSCAN,442,448,hdbscan_confianca >= 0.5,7.3
+5. Posts curtos,440,2,>= 50 caracteres e >= 5 palavras,7.2
+6. Contexto mobile,414,26,contem ao menos um termo de dominio mobile,6.8
+7. Duplicatas por URL,363,51,URL_Topico unica,6.0

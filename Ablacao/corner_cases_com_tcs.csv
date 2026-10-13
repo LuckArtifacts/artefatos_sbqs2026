@@ -1,0 +1,419 @@
+﻿id,categoria,post_original,cluster_predito,cluster_strength,caso_teste
+CC01,curto_vago,Meu celular não liga.,-1,0.0,"Summary: TC - Verify device does not power on after pressing power button
+Initial Setup:
+- Device battery is charged (at least 50%)
+- Device is powered off
+Steps:
+  - Step: Press and hold the power button for 10 seconds
+    Expected: Device should vibrate and display the boot logo, then proceed to the lock screen or home screen
+  - Step: Release the power button and wait 30 seconds
+    Expected: Device should complete booting and be fully operational on the home screen"
+CC02,curto_vago,Tela bugada.,-1,0.0,"Summary: TC - Verify that the device screen does not display graphical corruption or artifacts  
+Initial Setup:  
+- Device is powered on and unlocked  
+- All default display settings are applied (no developer options like ""Show surface updates"" enabled)  
+Steps:  
+- Step: Observe the home screen and any open app for graphical glitches, flickering, or distorted areas.  
+  Expected: The screen should display content clearly without any visual artifacts, color distortion, or unexpected pixelation.  
+- Step: Navigate through multiple apps (e.g., Settings, Camera, Chrome) and rotate the device between portrait and landscape.  
+  Expected: The screen should render correctly in all orientations without tearing, freezing, or corrupted UI elements."
+CC03,curto_vago,Bluetooth não funciona direito no meu [FABRICANTE].,-1,0.0,"Summary: TC - Verify Bluetooth fails to pair or connect with another device on [FABRICANTE]
+Initial Setup:
+- Device under test ([FABRICANTE]) is powered on and unlocked
+- Bluetooth is enabled on the device
+- A second Bluetooth device (e.g., another phone or speaker) is powered on and in pairing mode
+Steps:
+  - Step: Open Settings, go to Connected devices, and tap ""Pair new device""
+    Expected: The device should scan and display available Bluetooth devices
+  - Step: Select the second Bluetooth device from the list
+    Expected: The device should initiate pairing and show a pairing confirmation dialog
+  - Step: Confirm the pairing request on both devices
+    Expected: The devices should successfully pair and show as ""Connected"" in the Bluetooth settings"
+CC04,curto_vago,Atualização estragou tudo.,-1,0.0,"Summary: TC - Verify that the device functions correctly after a system update  
+Initial Setup:  
+- Device is powered on and connected to a stable Wi-Fi network  
+- Device has the latest system update installed  
+- No third-party launcher or custom modifications are active  
+Steps:  
+- Step: Unlock the device and navigate to the home screen  
+  Expected: Home screen loads without lag, icons are displayed correctly, and no error messages appear  
+- Step: Open the Settings app and scroll through all main categories (e.g., Display, Battery, Apps)  
+  Expected: Each category opens without crashing, and all options are responsive  
+- Step: Launch the default Phone app and make a test call to a known working number  
+  Expected: Call connects, audio works both ways, and the call does not drop unexpectedly  
+- Step: Open the Camera app, take a photo, and then switch to video recording for 10 seconds  
+  Expected: Photo saves without error, video records and plays back without stuttering or crashing  
+- Step: Open a pre-installed app (e.g., Messages or Chrome) and perform a basic action (send a text or load a webpage)  
+  Expected: App opens quickly, action completes without freezing or force-closing"
+CC05,curto_vago,Câmera ruim.,-1,0.0,"Summary: TC - Verify camera image quality is poor or degraded
+Initial Setup:
+- Device is powered on and unlocked
+- Camera app is installed and accessible
+- Default camera settings are applied (no filters, HDR auto, resolution set to maximum)
+Steps:
+  - Step: Open the Camera app.
+    Expected: The camera viewfinder displays a clear, sharp preview without excessive noise or blur.
+  - Step: Point the camera at a well-lit, static subject (e.g., a printed text or a colorful object) and tap the shutter button to capture a photo.
+    Expected: The captured photo is saved with good clarity, accurate colors, and minimal noise or artifacts.
+  - Step: Open the Gallery app and view the captured photo at full zoom.
+    Expected: The photo should show sharp details without significant grain, distortion, or unnatural smoothing."
+CC06,multiplos_bugs,"Depois da última atualização do meu [MODELO-3], a tela começou a piscar durante o uso normal, o Bluetooth desconecta toda hora quando tento usar fones de ouvido sem fio, e a bateria que antes durava o dia todo agora não passa das 15h. Três problemas de uma vez, estou muito frustrado.",-1,0.0,"Summary: TC - Verify screen flickering during normal use after system update on [MODELO-3]
+Initial Setup:
+- Device: [MODELO-3] with the latest system update installed
+- Battery charged above 50%
+- All apps closed, device idle on home screen
+Steps:
+  - Step: Unlock the device and navigate to the home screen.
+    Expected: The screen displays steadily without any flickering or flashing.
+  - Step: Open any standard app (e.g., Settings, Messages, or a web browser) and scroll through content.
+    Expected: The screen remains stable without intermittent flickering or brightness changes.
+  - Step: Return to the home screen and rotate the device from portrait to landscape and back.
+    Expected: The screen orientation changes smoothly with no flickering during or after rotation.
+  - Step: Leave the device idle on the home screen for 2 minutes.
+    Expected: The screen does not flicker or pulse during idle time."
+CC07,multiplos_bugs,"Meu [MODELO-8] tem vários problemas. O GPS não localiza direito, o Wi-Fi cai toda hora, as notificações de WhatsApp não chegam quando a tela tá apagada, e o sensor de impressão digital demora uns 3 segundos pra reconhecer. Alguém mais com esses problemas todos juntos?",-1,0.0,"Summary: TC - Verify WhatsApp notifications are not delivered when the screen is off on [MODELO-8]  
+Initial Setup:  
+- Device: [MODELO-8] running stock Android  
+- WhatsApp installed and logged in with an active account  
+- Wi-Fi or mobile data enabled  
+- Device screen set to turn off automatically after 30 seconds of inactivity  
+- Do Not Disturb mode is OFF  
+- WhatsApp notification settings: All notifications enabled (sound, pop-up, lock screen)  
+- Battery optimization for WhatsApp set to ""Not optimized""  
+Steps:  
+- Step: Send a WhatsApp message from another device to the [MODELO-8] user.  
+  Expected: The [MODELO-8] receives the notification immediately (sound/vibration and notification on lock screen).  
+- Step: Wait for the screen to turn off automatically (after 30 seconds of inactivity).  
+  Expected: The screen turns off normally.  
+- Step: Immediately send another WhatsApp message from the other device to the [MODELO-8] user.  
+  Expected: The [MODELO-8] should play the notification sound/vibration and show the notification on the lock screen within 5 seconds.  
+- Step: Wait 5 minutes with the screen off, then send a third WhatsApp message.  
+  Expected: The [MODELO-8] should still receive the notification promptly (within 5 seconds) with sound/vibration and lock screen display."
+CC08,multiplos_bugs,"Olá, desde que comprei meu [MODELO-4] tenho enfrentado os seguintes problemas: 1) A câmera frontal fica com imagem esverdeada em ambientes escuros. 2) O carregamento rapido parou de funcionar e só carrega normal. 3) O auto-brilho da tela fica variando sozinho sem parar. 4) O som do alto-falante inferior está mais baixo que o superior. Já fiz reset de fábrica e nada resolveu.",-1,0.0,"Summary: TC - Verify front camera displays greenish image in low-light environments
+Initial Setup:
+- Device: [MODELO-4] with factory reset performed
+- Ensure device is in a dark room or environment with ambient light below 10 lux
+- Open the Camera app
+Steps:
+  - Step: Switch to the front-facing camera
+    Expected: The camera preview should display a clear, natural-colored image without any green tint
+  - Step: Take a photo in the dark environment
+    Expected: The captured photo should show accurate colors without a greenish hue, matching the preview"
+CC09,multiplos_bugs,"Tela congelando, áudio pipocando nas chamadas e câmera não foca, tudo no [MODELO-10].",-1,0.0,"Summary: TC - Verify that the camera does not freeze or fail to focus during a call with audio popping
+Initial Setup:
+- Device: [MODELO-10] with latest software update installed
+- Battery charged above 50%
+- SIM card inserted with active mobile network
+- Default camera app and dialer app installed
+- No third-party call recording or camera apps running in background
+Steps:
+  - Step: Open the Phone app and place an outgoing call to a test number that answers.
+    Expected: Call connects successfully with clear audio, no popping or distortion.
+  - Step: While the call is active, open the Camera app from the home screen or app drawer.
+    Expected: Camera viewfinder displays live preview without freezing or lag.
+  - Step: Tap on the screen to trigger autofocus on a nearby object (e.g., a printed text or a face).
+    Expected: Camera focuses smoothly, image becomes sharp, and no freeze or crash occurs.
+  - Step: End the call and check the camera viewfinder again.
+    Expected: Camera continues to work normally, no freeze, and autofocus still functions correctly."
+CC10,multiplos_bugs,"Pessoal, meu [MODELO-6] tá com a tela externa que não responde ao toque na parte de baixo, a tela interna fica com uma marca no meio onde dobra, o celular esquenta muito quando carrega, e o reconhecimento facial parou de funcionar depois da última atualização de segurança. Mandei pra assistência duas vezes e voltou com os mesmos problemas.",-1,0.0,"Summary: TC - Verify facial recognition works after security update
+Initial Setup:
+- Device: [MODELO-6]
+- Software: Latest security update installed (the one reported to cause the issue)
+- Device fully charged and screen unlocked
+- Face unlock previously enrolled and enabled in Settings > Security > Face unlock
+Steps:
+  - Step: Open Settings > Security > Face unlock
+    Expected: Face unlock settings page opens without errors
+  - Step: Tap ""Improve face matching"" or ""Add alternate appearance"" (if available)
+    Expected: Option proceeds to camera preview without crashing
+  - Step: Lock the device by pressing the power button
+    Expected: Device locks and screen turns off
+  - Step: Press the power button to wake the device, then look at the front camera
+    Expected: Face unlock should recognize the registered face and unlock the device to the home screen without requiring PIN or pattern"
+CC11,nao_bug,Gostaria de saber se a [FABRICANTE] tem planos de incluir um modo astrofotografia na câmera do [MODELO-1]. Seria muito bom pra quem gosta de fotografar o céu noturno. A [OUTRO-FABRICANTE] já tem isso há anos.,-1,0.0,"Summary: TC - Verify that the [MODELO-1] camera does not include an astrophotography mode  
+Initial Setup:  
+- Device: [MODELO-1] with latest stock firmware  
+- Camera app is installed and updated to the latest version  
+- Device is in a dark environment (night sky visible)  
+Steps:  
+- Step: Open the Camera app on the [MODELO-1].  
+  Expected: The camera viewfinder should appear with available shooting modes displayed.  
+- Step: Swipe through all available camera modes (e.g., Photo, Video, Portrait, Night, Pro, etc.) and check for a mode labeled ""Astrophotography"" or ""Astro"" or similar.  
+  Expected: No astrophotography mode should be present in the mode selector.  
+- Step: Tap the ""More"" or ""Modes"" menu (if available) to expand the list of additional modes.  
+  Expected: The expanded list should not include any astrophotography or star photography mode."
+CC12,nao_bug,Quando vai sair a atualização do Android 15 para o [MODELO-9]? Já faz meses que estou esperando e não tem nenhuma previsão oficial. Outros fabricantes já lançaram. [FABRICANTE] sempre atrasada.,-1,0.0,"Summary: TC - Verify that Android 15 update availability is displayed in system settings for [MODELO-9]
+Initial Setup:
+- Device: [MODELO-9] with Android 14 installed
+- Device connected to Wi-Fi with internet access
+- Device battery charged above 50%
+Steps:
+  - Step: Open the ""Settings"" app.
+    Expected: The Settings menu is displayed.
+  - Step: Scroll down and tap ""System"" > ""System update"".
+    Expected: The system update screen shows the current Android version and checks for available updates.
+  - Step: Tap ""Check for update"".
+    Expected: The device checks for updates and displays either ""Your system is up to date"" or a notification that an update is available, including Android 15 if released for this model."
+CC13,nao_bug,"Acabei de comprar o [MODELO-2] e estou adorando! A tela é linda, a câmera tira fotos incríveis e a bateria dura o dia inteiro. Melhor celular que já tive. Recomendo pra todo mundo!",-1,0.0,"Summary: TC - Verify that user praise and satisfaction does not mask an underlying software bug  
+Initial Setup:  
+- Device: [MODELO-2] with stock Android  
+- Device is fully charged and connected to Wi-Fi  
+- All apps are updated to latest versions  
+- No user-reported bug or malfunction is described in the report  
+
+Steps:  
+- Step: Review the user bug report for any description of unexpected behavior, crash, or malfunction.  
+  Expected: The report should contain a clear description of a software bug.  
+- Step: Since the report contains only positive feedback and no bug description, conclude that no reproducible bug exists.  
+  Expected: No test case can be generated because the report does not describe any software malfunction."
+CC14,nao_bug,Alguém sabe qual carregador rapido é compatível com o [MODELO-8]? O original não veio na caixa e quero comprar um mas tenho medo de estragar a bateria. Aceito recomendações de marca.,-1,0.0,"Summary: TC - Verify that the device does not display a ""fast charging"" or fast charging notification when using a non-compatible charger
+Initial Setup:
+  - Device: [MODELO-8] with battery level below 80%
+  - Charger: Third-party standard USB-A to USB-C charger (5V/2A, no fast charging support)
+  - USB cable: Standard USB-A to USB-C cable
+Steps:
+  - Step: Connect the third-party charger to the device via the USB cable.
+    Expected: The device should show a standard charging notification (e.g., ""Charging slowly"" or no special fast-charging indicator), and the battery icon should not display ""fast charging"" or ""fast charging"" text.
+  - Step: Observe the lock screen and notification panel for any fast-charging indicators.
+    Expected: No ""fast charging"" or ""fast charging"" message should appear; the device should charge at standard speed without triggering any fast-charging protocol."
+CC15,nao_bug,"Comparando o [MODELO-3] com o [MODELO-CONCORRENTE], qual vocês acham melhor em câmera? Estou em dúvida entre os dois. O preço tá parecido na promoção.",-1,0.0,"Summary: TC - Verify that camera comparison functionality is not triggered by a user question about device camera quality  
+Initial Setup:  
+- Device is powered on and unlocked  
+- No camera comparison app or feature is open  
+Steps:  
+- Step: Open the web browser or any app that allows text input  
+  Expected: The device should display the home screen or the selected app without launching any camera comparison tool  
+- Step: Type or paste the user query: ""Comparando o [MODELO-3] com o [MODELO-CONCORRENTE], qual vocês acham melhor em câmera? Estou em dúvida entre os dois. O preço tá parecido na promoção.""  
+  Expected: The text should be entered normally without triggering any unexpected behavior, crashes, or automatic camera-related actions  
+- Step: Submit the text (e.g., press Enter or send)  
+  Expected: The device should process the input as normal text input; no camera app, comparison UI, or system crash should occur"
+CC16,ambiguo,"Meu celular tá estranho depois da atualização. Não sei explicar direito, mas tá diferente. Parece mais lento, ou talvez seja impressão minha. Alguém mais sentiu diferença?",-1,0.0,"Summary: TC - Verify device performance and responsiveness after system update
+Initial Setup:
+- Device is powered on and fully charged
+- Device has been updated to the latest available software version
+- Device has been idle for at least 5 minutes after the update
+- No background apps are manually closed
+Steps:
+- Step: Unlock the device and navigate to the home screen
+  Expected: Home screen icons and widgets load instantly with no lag or stutter
+- Step: Open the Settings app
+  Expected: Settings app opens within 2 seconds with smooth scrolling
+- Step: Scroll through the full list of settings options
+  Expected: Scrolling is smooth, no frame drops or freezing
+- Step: Open the Recents menu (overview of open apps)
+  Expected: Recents menu appears immediately with all previously open apps displayed
+- Step: Switch between three different apps (e.g., Settings, Camera, Chrome) using the Recents menu
+  Expected: Each app switches within 1 second with no black screen or delay
+- Step: Perform a simple UI interaction, such as pulling down the notification shade
+  Expected: Notification shade pulls down smoothly without lag"
+CC17,ambiguo,O app do banco fecha sozinho às vezes. Não sei se é problema do celular ou do app. Acontece no meu [MODELO-10] mas minha esposa tem o mesmo celular e não acontece com ela. Será que é alguma configuração?,-1,0.0,"Summary: TC - Verify that the banking app does not close unexpectedly when switching between apps or during idle time
+Initial Setup:
+- Device: [MODELO-10] (the user's device where the bug occurs)
+- Banking app installed and logged in
+- Battery optimization settings for the banking app set to ""Optimized"" (default)
+- No other apps running in the background that might interfere
+Steps:
+  - Step: Open the banking app and navigate to the main account screen.
+    Expected: The app opens and displays the account information correctly.
+  - Step: Press the Home button to minimize the app, then immediately reopen it from the recent apps menu.
+    Expected: The app resumes from the previous screen without closing or restarting.
+  - Step: Leave the banking app open in the foreground for 5 minutes without any interaction.
+    Expected: The app remains open and responsive; it does not close or crash.
+  - Step: Open 3 other apps (e.g., Settings, Chrome, Camera) one by one, then return to the banking app via the recent apps menu.
+    Expected: The banking app resumes correctly without closing or showing a blank screen.
+  - Step: Go to Settings > Apps > Banking app > Battery > select ""Unrestricted"" (disable battery optimization), then repeat steps 1-4.
+    Expected: The app should not close unexpectedly under any battery optimization setting."
+CC18,ambiguo,A bateria do meu [MODELO-3] dura umas 8 horas com uso moderado. É normal isso? Meu celular anterior durava mais. Não sei se é defeito ou se é assim mesmo.,-1,0.0,"Summary: TC - Verify battery drain rate during moderate usage on [MODELO-3]  
+Initial Setup:  
+- Device: [MODELO-3] with 100% battery charge  
+- All apps updated to latest versions  
+- Screen brightness set to 50% (auto-brightness disabled)  
+- Wi-Fi and mobile data enabled  
+- No power-saving mode active  
+- Background app refresh enabled for all apps  
+Steps:  
+- Step: Unplug the device from charger and note the exact time and battery percentage (should be 100%).  
+  Expected: Battery percentage is 100% and time is recorded.  
+- Step: Use the device for 30 minutes of web browsing via Chrome (non-video sites), 30 minutes of YouTube video playback at 720p, 30 minutes of social media scrolling (Instagram/TikTok), and 30 minutes of music streaming via Spotify (screen off). Total 2 hours of moderate usage.  
+  Expected: After 2 hours, battery percentage should not drop below 85% (indicating normal drain rate of ~7.5% per hour).  
+- Step: Continue the same usage pattern for an additional 6 hours (total 8 hours of moderate usage).  
+  Expected: After 8 hours, battery percentage should be above 20% (indicating normal battery life for moderate usage).  
+- Step: Check battery usage statistics in Settings > Battery > Battery usage.  
+  Expected: No single app or system process should show abnormally high consumption (e.g., >40% of total drain)."
+CC19,ambiguo,"Meu [MODELO-8] reinicia sozinho de vez em quando. Não consigo identificar um padrão, às vezes acontece de manhã, às vezes de noite, às vezes passa uma semana sem acontecer. Já tentei limpar cache mas não sei se resolveu.",-1,0.0,"Summary: TC - Verify device does not spontaneously restart during normal idle usage  
+Initial Setup:  
+- Device is a [MODELO-8] with stock firmware, no pending system updates  
+- Device is fully charged (battery > 80%)  
+- No third-party task killers or battery optimization apps installed  
+- Device is set to default power management settings  
+- All apps are up to date from Google Play Store  
+- Device has been rebooted cleanly at least 24 hours prior to test  
+
+Steps:  
+- Step: Place the device on a stable surface with screen off, connected to Wi-Fi, and no active apps in foreground  
+  Expected: Device remains powered on, no spontaneous restart occurs within 1 hour  
+- Step: Leave the device idle for an additional 2 hours, checking periodically for any restart (e.g., by noting uptime in Settings > About phone)  
+  Expected: Device continues to operate normally without restarting  
+- Step: After 3 total hours of idle time, unlock the device and check system logs (Settings > Developer options > Take bug report) for any kernel panic or unexpected reboot entries  
+  Expected: No evidence of spontaneous reboot in the logs; device uptime matches the test duration"
+CC20,intermitente_complexo,"O áudio das chamadas falha no meu [MODELO-5], mas SOMENTE quando estou conectado no Bluetooth do carro, com o Waze aberto dando instruções de navegação, e alguém me liga pelo WhatsApp. Se for ligação normal do telefone funciona bem. Se desligar o Waze também funciona. Só quando tá tudo junto ao mesmo tempo que o áudio fica picotado e às vezes corta completamente.",-1,0.0,"Summary: TC - Verify audio call quality during WhatsApp call with Waze navigation active over car Bluetooth
+Initial Setup:
+- [MODELO-5] connected to car Bluetooth system
+- Waze app installed and logged in
+- WhatsApp app installed and logged in
+- Car Bluetooth audio profile (HFP/A2DP) active and working
+Steps:
+- Step: Open Waze and set a navigation route with voice guidance enabled
+  Expected: Waze provides clear voice navigation instructions through car speakers
+- Step: While Waze navigation is active, receive an incoming WhatsApp voice call from another contact
+  Expected: WhatsApp call connects and audio is clear, without choppiness or dropouts, through car Bluetooth
+- Step: During the WhatsApp call, allow Waze to continue giving navigation instructions simultaneously
+  Expected: Audio from both WhatsApp call and Waze navigation should be mixed clearly without audio cutting out or becoming choppy"
+CC21,intermitente_complexo,"A tela do meu [MODELO-6] fica com umas manchas escuras, mas só aparece quando o celular tá quente (tipo depois de jogar uns 30 minutos) E a luminosidade tá acima de 80%. Se eu diminuir o brilho ou esperar esfriar, as manchas somem. Não é burn-in porque muda de lugar.",-1,0.0,"Summary: TC - Verify dark spots on [MODELO-6] screen appear after extended gaming with high brightness
+Initial Setup:
+- Device: [MODELO-6]
+- Battery charged above 50%
+- Screen brightness set to 80% or higher
+- Device at room temperature (no prior heating)
+Steps:
+  - Step: Launch a graphically intensive game (e.g., Genshin Impact or similar) and play continuously for 30 minutes.
+    Expected: Screen remains uniform with no dark spots or discoloration during gameplay.
+  - Step: After 30 minutes, exit the game and observe the screen on a plain gray or white background (e.g., Settings menu or a solid color image).
+    Expected: No dark spots or patches appear on the display; the screen should be evenly lit.
+  - Step: While still observing the screen, reduce brightness to below 50%.
+    Expected: Any dark spots that may have appeared should not be present; the screen should remain uniform.
+  - Step: Wait for the device to cool down to room temperature (approximately 10 minutes), then set brightness back to 80% or higher and observe the screen again.
+    Expected: No dark spots or patches appear on the display; the screen should be evenly lit."
+CC22,intermitente_complexo,"O carregamento rápido do meu [MODELO-8] só funciona quando o celular tá abaixo de 15% de bateria. De 15% pra cima ele carrega normal lento. Testei com 3 carregadores originais diferentes, com cabos diferentes, em tomadas diferentes. Sempre o mesmo comportamento. Abaixo de 15% carrega rápido, acima de 15% carrega lento.",-1,0.0,"Summary: TC - Verify that fast charging works on [MODELO-8] when battery level is above 15%
+
+Initial Setup:
+- [MODELO-8] with battery level above 15% (e.g., 30-50%)
+- Original [FABRICANTE] fast charger and cable
+- Device unlocked and screen on
+
+Steps:
+  - Step: Connect the original fast charger and cable to the [MODELO-8].
+    Expected: The device should display a fast charging notification (e.g., ""fast charging"" or ""Fast charging"") on the lock screen or status bar.
+  - Step: Observe the charging status for 2 minutes.
+    Expected: The battery percentage should increase at a rate consistent with fast charging (e.g., at least 1% per 2-3 minutes)."
+CC23,intermitente_complexo,"O NFC do meu [MODELO-2] não funciona pra pagamento por aproximação no Nubank, mas funciona normal com o cartão do Itaú no Google Pay. Já tentei remover e adicionar o cartão de novo, limpar cache do Google Pay, reiniciar o celular. Com Itaú funciona toda vez, com Nubank nunca funciona. Os dois cartões estão como padrão quando testo.",-1,0.0,"Summary: TC - Verify NFC payment with Nubank card fails on Google Pay while Itaú card works
+Initial Setup:
+- Device: [MODELO-2] with NFC enabled
+- Google Pay app installed and set up with two cards: Nubank (set as default) and Itaú
+- Nubank card previously added and removed/re-added to Google Pay
+- Google Pay cache cleared and device restarted
+- NFC payment terminal available and functional
+Steps:
+- Step: Open Google Pay and verify both Nubank and Itaú cards are listed and Nubank is set as default for contactless payments.
+  Expected: Both cards are visible, and Nubank is marked as default.
+- Step: Hold the device near the NFC payment terminal to attempt a payment with the Nubank card.
+  Expected: The payment should process successfully, showing a confirmation on the terminal and Google Pay.
+- Step: If payment fails, open Google Pay settings and manually select the Itaú card as default for contactless payments.
+  Expected: Itaú card is now set as default.
+- Step: Hold the device near the NFC payment terminal to attempt a payment with the Itaú card.
+  Expected: The payment should process successfully, showing a confirmation on the terminal and Google Pay."
+CC24,informal_extremo,mano meu cll n carrega dps q atualizo aq kkkk ja tentei td oq vcs fala ai e nd resolve alguem me ajuda pfv to sem cel faz 2 dia pq acabo a bateria e n carrega mais,-1,0.0,"Summary: TC - Verify device charges after a system update  
+Initial Setup:  
+- Device is powered on with battery level below 10%  
+- Device has just completed a system update (e.g., Android version update or security patch)  
+- Original charger and cable are available  
+Steps:  
+- Step: Connect the original charger to the device and plug it into a power outlet.  
+  Expected: The device should display a charging indicator (e.g., battery icon with lightning bolt, LED light, or lock screen charging notification).  
+- Step: Wait for 10 minutes, then check the battery percentage on the lock screen or in Settings > Battery.  
+  Expected: The battery percentage should increase (e.g., from 5% to at least 8%).  
+- Step: Disconnect the charger, then reconnect it after 5 seconds.  
+  Expected: The charging indicator should reappear immediately, and the device should continue charging normally."
+CC25,informal_extremo,eae galera blz? tô com um probleminha chato no meu [MODELO-Y] kkk a tela fica piscano qnd abro o insta ou o tiktok mas nos outro app normal saca? sera q é bug do android ou do app msm? vlw,-1,0.0,"Summary: TC - Verify screen flickering when opening Instagram or TikTok on [MODELO-Y]  
+Initial Setup:  
+- Device: [MODELO-Y] (any model running Android)  
+- Instagram and TikTok apps installed and updated to latest versions  
+- Device screen brightness set to automatic or manual (any setting)  
+- No other apps causing display issues confirmed  
+Steps:  
+- Step: Open the Instagram app from the home screen or app drawer.  
+  Expected: The Instagram app should open smoothly with no screen flickering.  
+- Step: Scroll through the feed, view stories, and play a video.  
+  Expected: The screen should remain stable without flickering during any interaction.  
+- Step: Close Instagram and open the TikTok app.  
+  Expected: The TikTok app should open without screen flickering.  
+- Step: Scroll through the For You page and play a video.  
+  Expected: The screen should display content normally with no flickering."
+CC26,informal_extremo,SOCORRO MEU CELULAR TA TRAVANDO TODA HORA NAO CONSIGO NEM ABRIR O ZAP DIREITO COMPREI ESSE [MODELO-X] FAZ 3 MESES E JA TA ASSIM QUE ABSURDO VOU RECLAMAR NO PROCON,-1,0.0,"Summary: TC - Verify device freezes and becomes unresponsive when opening WhatsApp on [MODELO-X]
+Initial Setup:
+- Device: [MODELO-X] (purchased 3 months ago)
+- Battery charged above 50%
+- WhatsApp app installed and logged in
+- Device running latest available software version (no pending updates)
+Steps:
+  - Step: Unlock the device and navigate to the home screen.
+    Expected: Home screen loads smoothly without lag or freezing.
+  - Step: Tap the WhatsApp icon to open the app.
+    Expected: WhatsApp opens within 5 seconds, displaying the chat list without freezing or crashing.
+  - Step: Tap on any active chat conversation.
+    Expected: Chat opens and is fully scrollable, keyboard appears when tapping the text input field, and typing is responsive.
+  - Step: Send a text message in the chat.
+    Expected: Message sends immediately without delay, and the device remains responsive (no freezing, no unresponsive touch)."
+CC27,informal_extremo,oi gnt preciso d ajudaaa meu [MODELO-7] nao conecta no wifi d casa mas no wifi do trabalho funciona d boa ja reiniciei o roteador ja esqueci a rede e conectei dnv nd funciona help,-1,0.0,"Summary: TC - Verify [MODELO-7] fails to connect to home Wi-Fi network while connecting to work Wi-Fi works  
+Initial Setup:  
+- [MODELO-7] device with Android OS  
+- Home Wi-Fi network available and known to work with other devices  
+- Work Wi-Fi network available and known to work with the device  
+- Device currently connected to work Wi-Fi  
+Steps:  
+  - Step: Turn off Wi-Fi on the device.  
+    Expected: Wi-Fi is disabled.  
+  - Step: Turn on Wi-Fi on the device.  
+    Expected: Device scans and lists available Wi-Fi networks.  
+  - Step: Select the home Wi-Fi network from the list.  
+    Expected: Device prompts for password (if secured) and attempts to connect.  
+  - Step: Enter the correct home Wi-Fi password and tap ""Connect"".  
+    Expected: Device should successfully connect to the home Wi-Fi network and show ""Connected"" status.  
+  - Step: Open a web browser or any app requiring internet access.  
+    Expected: Internet access is available via the home Wi-Fi network."
+CC28,contraditorio,"A bateria do meu [MODELO-9] dura muito pouco, umas 4 horas só. Mas na verdade acho que o problema é a tela, porque quando tá com brilho baixo a bateria dura normal. Ou talvez seja o 5G que consome muito. Na verdade não sei se é bateria, tela ou rede. Às vezes dura 4 horas, às vezes dura 8. Depende do dia eu acho.",-1,0.0,"Summary: TC - Verify battery drain when screen brightness is set to high and 5G network is active
+Initial Setup:
+- Device: [MODELO-9] with Android stock, no power-saving modes enabled
+- Battery charged to 100%
+- SIM card with 5G network available and active
+- Screen brightness set to maximum (slider at 100%)
+- All apps closed, device idle on home screen
+Steps:
+- Step: Turn on the device screen and leave it on with maximum brightness for 30 minutes, with 5G data connection enabled.
+  Expected: Battery level should decrease by no more than 10% (typical idle drain rate for a working device).
+- Step: After 30 minutes, reduce screen brightness to minimum and disable 5G (switch to 4G/LTE), then leave the device idle for another 30 minutes.
+  Expected: Battery drain rate should significantly decrease, with less than 5% drop in battery level."
+CC29,contraditorio,"Meu [MODELO-3] não carrega. Quer dizer, carrega mas muito devagar. Na verdade ele carrega normal quando tá desligado, só quando tá ligado que demora. Mas ontem carregou rápido mesmo ligado, então não sei. O carregador tá ok eu acho, testei no celular da minha irmã e funcionou. Ou será que não testei? Não lembro agora.",-1,0.0,"Summary: TC - Verify slow charging behavior when device is powered on compared to powered off
+Initial Setup:
+- Device: [MODELO-3] with at least 50% battery remaining
+- Original charger and cable that came with the device
+- Device is currently powered on and unlocked
+- Another device (e.g., sister's phone) available for charger verification (optional)
+
+Steps:
+  - Step: Connect the original charger and cable to the powered-on [MODELO-3].
+    Expected: The device should display a charging indicator (e.g., lightning icon or ""Charging rapidly"" message) and charge at a normal speed (e.g., reaching full charge within the manufacturer's specified time).
+  - Step: Observe the battery percentage after 10 minutes of charging while the device remains powered on and unlocked.
+    Expected: The battery percentage should increase by a reasonable amount (e.g., at least 5-10% depending on charger wattage), indicating normal charging speed.
+  - Step: Power off the device completely.
+    Expected: The device should shut down normally.
+  - Step: While the device is powered off, reconnect the same charger and cable.
+    Expected: The device should show a charging animation (e.g., battery icon with charging indicator) and charge at a normal speed.
+  - Step: Observe the battery percentage after 10 minutes of charging while the device is powered off.
+    Expected: The battery percentage should increase by a similar or greater amount compared to when the device was powered on, confirming that charging is faster when the device is off."
+CC30,contraditorio,"A câmera do meu [MODELO-8] tá péssima. As fotos saem borradas. Bom, não todas, só as de noite. Na verdade de dia também fica borrada se eu tiver andando. Mas foto parado de dia fica boa. Acho que é o estabilizador. Ou o foco automático. Meu celular anterior não fazia isso, ou fazia? Enfim, quero que arrumem.",-1,0.0,"Summary: TC - Verify camera image sharpness during night-time and motion conditions  
+Initial Setup:  
+- Device: [MODELO-8] with default camera app  
+- Battery level above 50%  
+- Camera lens clean and free of obstructions  
+- Device set to automatic camera mode (no manual adjustments)  
+
+Steps:  
+- Step: Open the default Camera app on the [MODELO-8].  
+  Expected: Camera viewfinder displays a live preview without lag or distortion.  
+- Step: Switch to Night mode (or ensure the camera is in Auto mode for low-light conditions).  
+  Expected: Night mode activates or Auto mode adjusts for low light.  
+- Step: In a dimly lit indoor environment (e.g., room with only a single lamp on), hold the device steady and capture a photo of a stationary object (e.g., a book on a table).  
+  Expected: The captured photo is sharp, with no visible blur or motion artifacts.  
+- Step: While walking at a normal pace outdoors during daytime, capture a photo of a distant object (e.g., a sign or tree).  
+  Expected: The captured photo is sharp, with no blur caused by movement; the optical image stabilization (OIS) or electronic image stabilization (EIS) should compensate for motion."
