@@ -2,7 +2,7 @@
 
 Pacote de artefatos do artigo *Test Case Generation Based on User Complaints*, publicado no XXV Simpósio Brasileiro de Qualidade de Software (SBQS 2026), Maringá, PR, 10 a 13 de novembro de 2026.
 
-**Artigo (versão dos autores):** o PDF acompanha este depósito e está disponível em https://doi.org/10.5281/zenodo.23352112
+**Artigo (versão dos autores):** o PDF acompanha este depósito e está disponível em https://doi.org/10.5281/zenodo.23933219
 
 ## Descrição geral
 
